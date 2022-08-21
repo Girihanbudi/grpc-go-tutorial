@@ -1,0 +1,9 @@
+{
+  "makefile.extensionOutputFolder": "./.vscode",
+  "[go]": {
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "golang.go"
+  },
+}

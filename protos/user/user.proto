@@ -1,0 +1,39 @@
+syntax = "proto3";
+option go_package = "github.com/girihanbudi/protos/user";
+
+import "google/protobuf/Empty.proto";
+
+enum UserRoles {
+  SUPER=0;
+  ADMIN=1;
+  USER=2;
+}
+
+enum UserGender {
+  UNDEFINED = 0;
+  MALE = 1;
+  FEMALE = 2;
+}
+
+message User {
+  optional string id = 1;
+  optional UserRoles role = 2;
+  string name = 3;
+  string email = 4;
+  string password = 5;
+  UserGender gender = 6;
+}
+
+message UserList {
+  repeated User list = 1;
+}
+
+message GetUserDetail {
+  string email = 1;
+}
+
+service Users {
+  rpc Register(User) returns (google.protobuf.Empty) {}
+  rpc List(google.protobuf.Empty) returns (UserList) {}
+  rpc UserDetail(GetUserDetail) returns (User) {}
+}

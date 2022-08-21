@@ -20,10 +20,13 @@ In Makefile code, there is an example protobuff call command to generate pb file
 ### How to do reflection to inspect method on grpc active service
 Get all grpc reflection
 ```grpcurl --plaintext localhost:8080 list```
+
 Get all grpc reflection on group
 ```grpcurl --plaintext localhost:8080 list <group name>```
+
 Get describtion of grpc method
 ```grpcurl --plaintext localhost:8080 describe User.GetUser```
+
 Do request (on windows double quote json need to be escaped)
 ```grpcurl --plaintext -d '{\"Email\":\"ghanbudi@gmail.com\"}' localhost:8080 User.GetUser```
 
